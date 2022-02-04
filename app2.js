@@ -19,28 +19,34 @@ else
     console.log(`La tua età è ${userAge} anni`);
 
     // chiedo quanti km si vogliono percorrere
-    let totKM = parseInt(prompt("Ciao! Inserisci il numero dei km che vuoi percorrere"));
+    let totKM = parseInt(prompt("Inserisci il numero dei km che vuoi percorrere"));
     console.log(`I km che vuoi percorrere sono ${totKM}`);
 
     // verifico che il numero di km sia un dato corretto
-    if (isNaN(totKM) || (totKM > 1500) )
+    if (isNaN(totKM))
     {
         alert(`Hai inserito un dato non corretto, ricarica la pagina per ricominciare`);
     }
     else {
-        let ticketPrice = totKM * 0.21; //calcolo prezzo biglietto
-        console.log(`Il totale parziale del biglietto è ${ticketPrice}`);
-        if (userAge < 18) //controllo se il passeggero è maggiorenne
-        { 
-            ticketPrice = (ticketPrice*80)/100; //applico lo sconto
-        }
-        else if (userAge >= 65) //controllo se il passeggero è ultra65enne
+        if (totKM > 1500)
         {
-            ticketPrice = (ticketPrice*60)/100; //applico lo sconto
+            alert("Il massimo numero di km che puoi percorrere è 1500")
         }
-        ticketPrice = ticketPrice.toFixed(2); //arrotondo a due num decimali
-        let message = `Il costo del biglietto è di ${ticketPrice}€`; //messaggio finale
-        console.log(message);
-        alert(message);
+        else {
+            let ticketPrice = totKM * 0.21; //calcolo prezzo biglietto
+            console.log(`Il totale parziale del biglietto è ${ticketPrice}`);
+            if (userAge < 18) //controllo se il passeggero è maggiorenne
+            { 
+                ticketPrice = (ticketPrice*80)/100; //applico lo sconto
+            }
+            else if (userAge >= 65) //controllo se il passeggero è ultra65enne
+            {
+                ticketPrice = (ticketPrice*60)/100; //applico lo sconto
+            }
+            ticketPrice = ticketPrice.toFixed(2); //arrotondo a due num decimali
+            let message = `Il costo del biglietto è di ${ticketPrice}€`; //messaggio finale
+            console.log(message);
+            alert(message);
+        }
     }
 }
