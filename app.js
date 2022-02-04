@@ -1,10 +1,22 @@
 // chiedo quanti km si vogliono percorrere
-let totKM = prompt("Ciao! Inserisci il numero dei km che vuoi percorrere");
+let totKM = parseInt(prompt("Ciao! Inserisci il numero dei km che vuoi percorrere"));
 console.log(totKM);
 
+//controllo se il dato inserito sia un numero
+if (isNaN(totKM))
+{
+    alert(`Non hai inserito un numero, ricarica la pagina per ricominciare`)
+}
+
 // chiedo l'età del passeggero
-let userAge = prompt("Inserisci ora l'età della persona che vuole viaggiare");
+let userAge = parseInt(prompt("Inserisci ora l'età della persona che vuole viaggiare"));
 console.log(userAge);
+
+//controllo se il dato inserito sia un numero
+if (isNaN(userAge))
+{
+    alert(`Non hai inserito un numero, ricarica la pagina per ricominciare`)
+}
 
 // calcolo costo del biglietto
 let ticketPrice = totKM * 0.21;
