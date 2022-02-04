@@ -32,6 +32,9 @@ else if (userAge >= 65)
     ticketPrice = ticketPrice*60/100;
 }
 
+//arrotondo il prezzo del biglietto a due cifre decimali
+ticketPrice = ticketPrice.toFixed(2);
+
 let message = `Il costo del biglietto è di ${ticketPrice}€`;
 console.log(message);
 alert(message);
